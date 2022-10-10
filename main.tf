@@ -12,7 +12,7 @@ locals {
       device_type = instance.device_type == null || instance.device_type == "" ? "UNIVERSAL" : instance.device_type
       engine_version = instance.engine_version == null || instance.engine_version == "" ? "5.7" : instance.engine_version
       fast_upgrade = instance.fast_upgrade
-      first_slave_zone = instance.first_slave_zone
+      first_slave_zone = instance.first_slave_zone == null || instance.first_slave_zone == "" ? "" : instance.first_slave_zone
       force_delete = instance.force_delete == null ? false : instance.force_delete
       internet_service = instance.internet_service == null ? 0 : instance.internet_service
       intranet_port = instance.intranet_port == null ? 3306 : instance.intranet_port
@@ -21,7 +21,7 @@ locals {
       prepaid_period = instance.prepaid_period == null || instance.prepaid_period == 0 ? 1 : instance.prepaid_period
       project_id = instance.project_id == null ? 0 : instance.project_id
       root_password = instance.root_password == "" ? null : instance.root_password
-      second_slave_zone = instance.second_slave_zone
+      second_slave_zone = instance.second_slave_zone == null || instance.second_slave_zone == "" ? "" : instance.second_slave_zone
       security_groups = instance.security_groups
       slave_deploy_mode = instance.slave_deploy_mode == null ? 0 : instance.slave_deploy_mode
       slave_sync_mode = instance.slave_sync_mode == null ? 0 : instance.slave_sync_mode
